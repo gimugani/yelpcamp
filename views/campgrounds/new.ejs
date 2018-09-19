@@ -31,11 +31,10 @@
  </div>
 
 <script>
-  var autocomplete;
   function initAutocomplete() {
       // Create the autocomplete object, restricting the search to geographical
       // location types.
-      autocomplete = new google.maps.places.Autocomplete(
+      var autocomplete = new google.maps.places.Autocomplete(
           /** @type {!HTMLInputElement} */(document.getElementById('location')),
           {types: ['geocode']});
 
@@ -47,6 +46,6 @@
 </script>
 
 <!--googleMap API-->
-<script async defer type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3Y6969mvbr3mIo7UaeTtJdW3TO1rxK0I&libraries=places"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3Y6969mvbr3mIo7UaeTtJdW3TO1rxK0I&libraries=places"></script>
 
 <% include ../partials/footer %>

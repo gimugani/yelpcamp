@@ -18,7 +18,7 @@ var geocoder = NodeGeocoder(options);
 
 // INDEX
 router.get("/", function(req, res){
-    req.user
+    //req.user
     //Get all campgrounds from DB
     Campground.find({}, function(err, allCampgrounds){
        if(err) console.log(err); 
