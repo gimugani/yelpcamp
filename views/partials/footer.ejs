@@ -9,15 +9,15 @@
               /** @type {!HTMLInputElement} */(document.getElementById('location')),
               {types: ['geocode']});
   
-          // When the user selects an address from the dropdown, populate the address
-          // fields in the form.
+          // When the user selects an address from the dropdown, set it to the value of the #location
             var place = autocomplete.getPlace();
             var location = document.querySelector("#location");
             location.setAttribute("value", place);
       }
     </script>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3Y6969mvbr3mIo7UaeTtJdW3TO1rxK0I&libraries=places"></script>
-
+    
+    <!--googleMap API-->
+    <!--<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3Y6969mvbr3mIo7UaeTtJdW3TO1rxK0I&libraries=places"></script>-->
     <!-- jQuery CDN -->
     <script
       src="https://code.jquery.com/jquery-3.1.1.min.js"
