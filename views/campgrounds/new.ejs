@@ -40,6 +40,7 @@
 
       // When the user selects an address from the dropdown, set it to the value of the #location
         var place = autocomplete.getPlace();
+        console.log(place);
         var location = document.querySelector("#location");
         location.setAttribute("value", place);
   }
