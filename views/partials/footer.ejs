@@ -1,0 +1,30 @@
+    </div> <!--.container-->
+    
+    <script>
+      var autocomplete;
+      function initAutocomplete() {
+          // Create the autocomplete object, restricting the search to geographical
+          // location types.
+          autocomplete = new google.maps.places.Autocomplete(
+              /** @type {!HTMLInputElement} */(document.getElementById('location')),
+              {types: ['geocode']});
+  
+          // When the user selects an address from the dropdown, populate the address
+          // fields in the form.
+            var place = autocomplete.getPlace();
+            var location = document.querySelector("#location");
+            location.setAttribute("value", place);
+      }
+    </script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3Y6969mvbr3mIo7UaeTtJdW3TO1rxK0I&libraries=places"></script>
+
+    <!-- jQuery CDN -->
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous">
+    </script>
+    <!-- Bootstrap JS CDN -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    </body>
+</html>
