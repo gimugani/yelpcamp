@@ -39,15 +39,21 @@ router.post("/", middleware.isLoggedIn, function(req, res){
                     req.flash("success", "Successfully added comment");
                     res.redirect("/campgrounds/" + campground._id);
                }
-            });
+            }); 
         }
     });
 })
 
 //Comment Edit
 router.get("/:comment_id/edit", middleware.checkCommentOwnership ,function(req, res){
-    Comment.findById(req.params.comment_id, function(err, foundComment){
-    res.render("comments/edit", {campground_id: req.params.id, comment: foundComment});
+    Campground.findById(req.params.id, function(err, foundCampground){
+        if (err || !foundCampground){
+            req.flash("error", "No campground found!");
+            return res.redirect("back");
+        }
+        Comment.findById(req.params.comment_id, function(err, foundComment){
+            res.render("comments/edit", {campground_id: req.params.id, comment: foundComment});
+        });
     });
 });
 
